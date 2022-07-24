@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GuiController">
+   <children>
+      <TableView fx:id="tableView" layoutX="29.0" layoutY="151.0" prefHeight="200.0" prefWidth="801.0">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="220.0" text="Collection name" />
+          <TableColumn fx:id="opensea" prefWidth="159.0" text="Opensea [Sol]" />
+            <TableColumn fx:id="magic" prefWidth="206.0" text="Magic eden [Sol]" />
+            <TableColumn fx:id="diff" prefWidth="215.0" text="Diff [%]" />
+        </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="356.0" layoutY="14.0" text="Top 100 NFT Collections" textFill="DODGERBLUE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Button fx:id="addCollectionBtn" layoutX="29.0" layoutY="113.0" mnemonicParsing="false" onAction="#addCollection" onMouseEntered="#addMouseEntered" onMouseExited="#addMouseExit" style="-fx-background-radius: 100; -fx-background-color: #1E90FF;" text="+Add collection" textFill="#fffdfd">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="637.0" layoutY="93.0" text="Search:">
+         <effect>
+            <Glow />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchTextField" layoutX="688.0" layoutY="89.0" onAction="#searchText" prefHeight="25.0" prefWidth="142.0" />
+      <Label layoutX="29.0" layoutY="390.0" text="Settings">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="412.0" text="Refresh collection floor price every">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="29.0" layoutY="442.0" text="Check if need to send email every">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="29.0" layoutY="477.0" text="Email threshold">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="29.0" layoutY="508.0" text="Send emails to">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="166.0" layoutY="117.0" prefHeight="27.0" prefWidth="663.0" style="-fx-background-color: #B0C4DE;" text="floor price">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="352.0" layoutY="86.0" text="entries">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Button fx:id="refreshSaveBtn" layoutX="325.0" layoutY="404.0" mnemonicParsing="false" onAction="#refreshSave" onMouseEntered="#firstSaveMouseEntered" onMouseExited="#firstSaveMouseExit" prefHeight="30.0" prefWidth="54.0" style="-fx-background-color: transparent;" text="save">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="checkEmailSaveBtn" layoutX="325.0" layoutY="436.0" mnemonicParsing="false" onAction="#checkEmailSave" onMouseEntered="#secondSaveMouseEntered" onMouseExited="#secondSaveMouseExit" prefHeight="30.0" prefWidth="54.0" style="-fx-background-color: transparent;" text="save">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <HBox layoutX="506.0" layoutY="359.0" prefHeight="41.0" prefWidth="323.0" style="-fx-border-color: #FAD02C;">
+         <children>
+            <Button fx:id="previousBtn" mnemonicParsing="false" onAction="#previous" prefHeight="39.0" prefWidth="87.0" style="-fx-background-color: transparent;" text="Previous">
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+            <HBox prefHeight="41.0" prefWidth="164.0">
+               <children>
+                  <Button fx:id="oneBtn" mnemonicParsing="false" onAction="#one" prefHeight="39.0" prefWidth="20.0" text="1">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Button>
+                  <Button fx:id="secondBtn" mnemonicParsing="false" onAction="#two" prefHeight="41.0" prefWidth="30.0" style="-fx-background-color: transparent;" text="2">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Button>
+                  <Button fx:id="thirdBtn" mnemonicParsing="false" onAction="#three" prefHeight="41.0" prefWidth="30.0" style="-fx-background-color: transparent;" text="3">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Button>
+                  <Button fx:id="fourthBtn" mnemonicParsing="false" onAction="#four" prefHeight="41.0" prefWidth="30.0" style="-fx-background-color: transparent;" text="4">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Button>
+                  <Button fx:id="fiveBtn" mnemonicParsing="false" onAction="#five" prefHeight="42.0" prefWidth="30.0" style="-fx-background-color: transparent;" text="5">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Button>
+                  <Button fx:id="sixBtn" mnemonicParsing="false" onAction="#six" prefHeight="41.0" prefWidth="30.0" style="-fx-background-color: transparent;" text="6">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Button>
+               </children>
+            </HBox>
+            <Button fx:id="nextBtn" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#next" prefHeight="39.0" prefWidth="70.0" style="-fx-background-color: transparent;" text="Next">
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+         </children>
+      </HBox>
+      <Label fx:id="showing" layoutX="29.0" layoutY="359.0" text="Showing 1 to">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <Button fx:id="saveListBtn" layoutX="708.0" layoutY="16.0" mnemonicParsing="false" onAction="#saveList" onMouseEntered="#saveListMouseEntered" onMouseExited="#saveListMouseExit" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: transparent;" text="Save list">
+         <effect>
+            <Glow />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="uploadBtn" layoutX="708.0" layoutY="47.0" mnemonicParsing="false" onAction="#uploadList" onMouseEntered="#uploadListMouseEntered" onMouseExited="#uploadListMouseExit" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: transparent;" text="Upload list">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Button>
+      <Button fx:id="emailsToSaveBtn" layoutX="661.0" layoutY="508.0" mnemonicParsing="false" onAction="#emailsSave" onMouseEntered="#fourthSaveMouseEntered" onMouseExited="#fourthSaveMouseExit" prefHeight="30.0" prefWidth="54.0" style="-fx-background-color: transparent;" text="save">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="281.0" layoutY="411.0" prefHeight="17.0" prefWidth="26.0" text="secs">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="281.0" layoutY="442.0" prefHeight="17.0" prefWidth="26.0" text="secs">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="188.0" layoutY="475.0" prefHeight="17.0" prefWidth="44.0" text="percent">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Button fx:id="emailThresholdSaveBtn" layoutX="325.0" layoutY="468.0" mnemonicParsing="false" onAction="#emailThresholdSave" onMouseEntered="#thirdSaveMouseEntered" onMouseExited="#thirdSaveMouseExit" prefHeight="30.0" prefWidth="54.0" style="-fx-background-color: transparent;" text="save">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="199.0" layoutY="90.0" text="Show">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <ImageView fitHeight="27.0" fitWidth="25.0" layoutX="795.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+      <Image url="@../application/excelPhoto.png" />
+         </image>
+ 
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="25.0" layoutX="797.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../application/uploadPhoto.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="21.0" layoutX="315.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../application/savePhoto.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="21.0" layoutX="315.0" layoutY="444.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../application/savePhoto.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="21.0" layoutX="315.0" layoutY="476.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../application/savePhoto.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="21.0" layoutX="649.0" layoutY="518.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../application/savePhoto.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="tenLabel" layoutX="128.0" layoutY="359.0" text="17">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <Label layoutX="155.0" layoutY="359.0" text="of 100 entries">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <ComboBox fx:id="comboBox" layoutX="253.0" layoutY="84.0" onAction="#choiceBoxChanged" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #FFFFFF;" />
+      <TextField fx:id="refreshText" layoutX="232.0" layoutY="408.0" prefHeight="25.0" prefWidth="44.0" style="-fx-background-color: #1E90FF;" text="30" />
+      <TextField fx:id="checkEmailText" layoutX="226.0" layoutY="439.0" prefHeight="25.0" prefWidth="44.0" style="-fx-background-color: #1E90FF;" text="60" />
+      <TextField fx:id="thresholdText" layoutX="121.0" layoutY="473.0" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #1E90FF;" text="10" />
+      <TextField fx:id="emailsText" layoutX="116.0" layoutY="504.0" prefHeight="31.0" prefWidth="492.0" style="-fx-background-color: #1E90FF;" text="email_1@gmail.com;email_2@gmail.com;tamir.kucherov@braude.ac.il" />
+      <TextField fx:id="collectText" layoutX="121.0" layoutY="6.0" prefHeight="25.0" prefWidth="158.0" />
+      <Label fx:id="openLabel" layoutX="10.0" layoutY="39.0" />
+      <Label fx:id="collectLabel" layoutX="10.0" layoutY="11.0" prefHeight="17.0" prefWidth="99.0" text="Collection Slug:" />
+      <Button fx:id="addBtn" layoutX="216.0" layoutY="41.0" mnemonicParsing="false" onAction="#add" onMouseEntered="#addMouseEntered" onMouseExited="#addMouseExit" prefHeight="30.0" prefWidth="59.0" style="-fx-background-radius: 100; -fx-background-color: #1E90FF;" text="+Add" textFill="#fffdfd">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="collectLabel1" layoutX="6.0" layoutY="48.0" prefHeight="17.0" prefWidth="99.0" text="Collection Symbol:" />
+      <TextField fx:id="collectText1" layoutX="20.0" layoutY="72.0" prefHeight="25.0" prefWidth="158.0" />
+   </children>
+</Pane>
